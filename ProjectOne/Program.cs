@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ProjectFuse.Areas.Identity.Data;
@@ -11,7 +12,13 @@ builder.Services.AddDbContext<AppIdentityDbContext>(options => options.UseNpgsql
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
 
-builder.Services.AddIdentity<ProjectOneUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddIdentity<ProjectOneUser, IdentityRole>(options =>
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+        options.ClaimsIdentity.UserNameClaimType = ClaimTypes.Name;
+        options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier;
+        options.ClaimsIdentity.RoleClaimType = ClaimTypes.Role;
+    })
     .AddEntityFrameworkStores<AppIdentityDbContext>()
     .AddDefaultTokenProviders()
     .AddDefaultUI();

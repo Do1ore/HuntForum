@@ -1,5 +1,9 @@
 using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol;
+using ProjectFuse.Areas.Identity.Data;
 using ProjectFuse.Models;
 using ProjectFuse.Models.Forum;
 
@@ -9,17 +13,35 @@ namespace ProjectFuse.Controllers;
 public class ForumController : Controller
 {
     private readonly AppDbContext _context;
+    private readonly UserManager<ProjectOneUser> _userManager;
 
-    public ForumController(AppDbContext context)
+    public ForumController(AppDbContext context, UserManager<ProjectOneUser> userManager)
     {
         _context = context;
+        _userManager = userManager;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var topics = _context.Topics.ToList();
+        var topicViewList = new List<TopicView>();
+        foreach (var topic in topics)
+        {
+            topicViewList.Add(new TopicView
+            {
+                Title = topic.Title,
+                Content = topic.Content,
+                CreatedAt = topic.CreatedAt,
+                ForumMessagesCount = (long)_context.ForumMessages?.Where(m => m.TopicId == topic.TopicId).ToList().Count!,
+                AuthorName = _userManager.Users
+                    .Where(u=> u.Id == topic.UserId)
+                    .Select(u=> u.UserName)
+                    .FirstOrDefault()
+            });
+        }
+        return View(topicViewList);
     }
-    
+
     [HttpGet]
     public IActionResult CreateTopic()
     {
@@ -31,14 +53,17 @@ public class ForumController : Controller
     {
         if (ModelState.IsValid)
         {
-            topic.CreatedAt = DateTime.Now;
+            topic.CreatedAt = DateTime.UtcNow;
+            topic.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             _context.Topics.Add(topic);
+
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index)); 
+            return RedirectToAction(nameof(Index));
         }
+
         return View(topic);
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> CreateMessage(int topicId, string message)
     {
@@ -46,8 +71,8 @@ public class ForumController : Controller
         {
             TopicId = topicId,
             Message = message,
-            PostedAt = DateTime.Now,
-            UpdatedAt = DateTime.Now,
+            PostedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow,
             UserId = User.FindFirstValue(ClaimTypes.NameIdentifier)
         };
 
@@ -55,7 +80,7 @@ public class ForumController : Controller
         await _context.SaveChangesAsync();
         return RedirectToAction("TopicDetails", new { id = topicId });
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> LikeMessage(int messageId)
     {
@@ -65,6 +90,7 @@ public class ForumController : Controller
             message.LikeCount += 1;
             await _context.SaveChangesAsync();
         }
+
         return RedirectToAction("TopicDetails", new { id = message?.TopicId });
     }
 

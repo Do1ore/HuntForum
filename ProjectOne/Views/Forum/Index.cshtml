@@ -1,27 +1,47 @@
-<!DOCTYPE html>
+@model List<ProjectFuse.Models.Forum.TopicView>
 
-<body>
 
+<h1>Темы форума</h1>
+<a asp-action="CreateTopic" class="btn btn-primary">Создать свою тему</a>
 <div class="container mt-4">
-  <div class="row">
-    <!-- Контентная область -->
-    <div class="col-md-8">
-      <h1>Заголовок форума</h1>
-      <!-- Здесь будет контент форума -->
-    </div>
-    
-    <!-- Боковая панель -->
-    <div class="col-md-4">
-      <div class="p-3 mb-3 bg-light rounded">
-        <h4>Связанный контент</h4>
-        <!-- Здесь будет связанный контент -->
-      </div>
-      <div class="p-3 bg-light rounded">
-        <h4>Новости</h4>
-        <!-- Здесь будут новости -->
-      </div>
-    </div>
-  </div>
-</div>
+    <div class="row">
+        @foreach (var item in @Model)
+        {
+            <div class="col-md-8 mb-3">
+                <h2>@item.Title</h2>
+                <span>@item.Content</span><br/>
+                @if (item.AuthorName is not null)
+                {
+                    <span>Автор: @item.AuthorName</span>
+                }<br/>
+                <small>Создано @item.CreatedAt.ToLocalTime().ToString("d/M/yyyy")</small>
 
-</body>
+            </div>
+        }
+        <div class="col-md-4">
+            <div class="p-3 mb-3 bg-light rounded">
+                <h4>Новости форума</h4>
+                <div class="p-3 bg-light rounded">
+                    <ul>
+                        <li>
+                            <h2>Пули 30 кал. матч и охота, модифицированный Корбин</h2>
+                            <p>Охотничий вариант имеет двойной сердечник, со стороны кормы более жесткий и мягкий в оживальной части. Dr. Watson 16-05-2019 16:13.</p>
+                            <a href="https://forum.guns.ru/forum_light_message/430/2456607.html">Читать далее</a>
+                        </li>
+                        <li>
+                            <h2>В Удмуртии прошел Охотничий биатлон 2021</h2>
+                            <p>14 марта на базе стрелкового комплекса «Солнечный» Якшур-Бодьинского района прошли самые яркие и масштабные соревнования.</p>
+                            <a href="https://minpriroda-udm.ru/novosti.html">Читать далее</a>
+                        </li>
+                        <li>
+                            <h2>Техника передвижения на ходовых охотах</h2>
+                            <p>На охоте для передвижения могут применяться: ходьба, бег, перебежки, переползание, скрадывание. Последний способ передвижения наиболее часто используется охотниками.</p>
+                            <a href="https://www.ohotniki.ru/hunting/article/2013/10/21/172739-tehnika-peredvizheniya-na-hodovyih-ohotah.html">Читать далее</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -10,7 +10,6 @@ public class ForumMessage
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ForumMessageId { get; set; }
-    [Column(TypeName = "nvarchar(1500)")]
     public string? Message { get; set; }
 
     public DateTime PostedAt { get; set; }
@@ -21,7 +20,5 @@ public class ForumMessage
     public int TopicId { get; set; }
     public Topic? Topic { get; set; }
     
-    [ForeignKey("ProjectOneUser")]
     public string? UserId { get; set; }
-    public ProjectOneUser? User { get; set; }
 }
