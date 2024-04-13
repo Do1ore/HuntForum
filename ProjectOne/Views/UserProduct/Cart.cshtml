@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ProjectFuse.Models.Product>
+
+<style>
+    .back{
+    object-fit:cover;
+    border-radius: 5px;
+    max-height: 30dvh; 
+    }
+    
+</style>
+<div class="row text-center">
+    <div class="col-4">
+        <img src="/img/images/guns1.jpg" class="back img-fluid shadow-sm" alt="abstract1"/>
+    </div>
+
+    <div class="col-4">
+        <img src="/img/images/guns2.jpg" class="back img-fluid shadow-sm" alt="abstract1"/>
+    </div>
+
+    <div class="col-4">
+        <img src="/img/images/guns1.jpg" class="back img-fluid shadow-sm" alt="abstract1"/>
+    </div>
+</div>
+<div class="pb-5 mt-5 text-center">
+    <h1>Ваша корзина</h1>
+    <span class="lead">Количество: @Model.Count()</span>
+</div>
+
+
+@foreach (var item in Model)
+{
+    <div class="col">
+        <div class="card mb-lg-3 rounded-1 mb-4 shadow-sm" style="max-width: 100%; padding: 15px">
+            <div class="row ">
+                <div class="col-md-6">
+                    <img src="@item.ImagePath" class="img-fluid h-100 rounded-1 shadow-sm" alt="Image">
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <span class="lead">@item.Description</span>
+                        <p>
+                            <small class="text-muted">
+                                <mark class="mark text-light bg-dark rounded-3 p-1 ">@item.Category</mark>
+                            </small>
+                        </p>
+                        <p class="card-text">От @Math.Round((decimal)item.Price!, 0) $ </p>
+                        <div class="d-flex">
+                            <form id="@item.Id" method="post" asp-controller="UserProduct" asp-action="UserDetails">
+                                <input type="hidden" name="id" value="@item.Id">
+                                <button type="submit" class="btn btn-primary me-2">Детали</button>
+                            </form>
+                            <button type="submit" onclick="alert('Спасибо за покупку!')" class="btn btn-info me-2">Купить</button>
+                            <form id="Remove_@item.Id" method="post" asp-controller="UserProduct" asp-action="RemoveFromCart">
+                                <input type="hidden" name="productId" value="@item.Id">
+                                <button type="submit" class="btn btn-outline-danger me-2">Удалить из корзины</button>
+                            </form>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

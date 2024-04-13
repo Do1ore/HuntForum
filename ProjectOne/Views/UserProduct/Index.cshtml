@@ -1,0 +1,97 @@
+﻿@using System.Globalization
+@model IEnumerable<ProjectFuse.Models.Product>
+@{
+    ViewData["Title"] = "ProductListForUser";
+}
+
+
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-8">
+            <div class="pb-5">
+                <h1>Все товары</h1>
+                <span class="lead">
+                    Уже более 12 лет мы радуем Вас эксклюзивным ассортиментом, привезенным напрямую от лучших производителей. Охотничье оружие,пулевые и дробовые патроны,пневматику и снаряжение мы предлагаем Вам по ценам 1-го импортера. Ждем Вас в нашем магазине охотничьего оружия и товаров для охоты по адресу: г. Минск, улица Максима Богдановича, 46 (на пересечении с пр.Машерова), напротив "Белой Вежи". Автолюбители могут ненадолго припарковать свой автомобиль во дворе домов 46 и 48 по ул.Богдановича и дома 30 по проспекту Машерова.
+                </span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <img class="img-fluid rounded-1" style="object-fit: contain; max-height: 40dvh " src="img/images/guns2.jpg" alt="guns">
+        </div>
+    </div>
+
+    <h3 class="text-secondary p-2">Фильтрация</h3>
+    <form id="sort-form" asp-controller="UserProduct" asp-action="Index" method="get" class="form-inline my-2">
+        <div class="row">
+            <div class="col-6">
+                <input type="text" name="searchString" class="form-control mr-sm-2" placeholder="Название товара">
+            </div>
+            <div class="col-6">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-6">
+                        <input form="sort-form" type="submit" value="Искать" class="btn btn-success my-2 my-sm-0 me-2">
+                        <a asp-controller="UserProduct" asp-action="Index" class="btn btn-outline-black my-2 my-sm-0">Сбросить</a>
+                    </div>
+                    <div class="col-6">
+                        <div class="btn-group" role="group">
+                            <select class="form-select" id="sortOrder" name="sortOrder" onchange="location = this.value;">
+                                <option value="?sortOrder=name_desc">По умолчанию</option>
+                                <option value="?sortOrder=name_desc">По имени (desc)</option>
+                                <option value="?sortOrder=price">По цене (asc)</option>
+                                <option value="?sortOrder=price_desc">По цене (desc)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>
+
+
+<div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-xl-2">
+
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card mb-lg-3 rounded-2 mb-4 shadow-sm bg-secondary p-2" style="max-width: 100%; ">
+                <div class="row">
+                    <div class="col-md-6 mycenter">
+                        <img src="@item.ImagePath" class="img-fluid rounded-1 h-100" alt="Image">
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card-body bg-primary text-bg-primary rounded-1  ">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p>
+                                <small class="text-muted">
+                                    <mark class="mark text-light bg-dark rounded-3 p-1 ">@item.Category</mark>
+                                </small>
+                            </p>
+                            <p class="card-text">От @Math.Round((decimal)item.Price!, 0).ToString(CultureInfo.InvariantCulture) $ </p>
+                            <div class="d-flex">
+
+                                <form method="post" class="me-2" asp-controller="UserProduct" asp-action="UserDetails">
+                                    <input type="hidden" name="id" value="@item.Id.ToString()">
+                                    <button type="submit" class="btn btn-primary">Детали</button>
+                                </form>
+
+                                <form method="post" class="me-2" asp-controller="UserProduct" asp-action="AddToCart">
+                                    <input type="hidden" name="id" value="@item.Id.ToString()">
+                                    <button type="submit" class="btn btn-secondary">В корзину</button>
+                                </form>
+
+                                <button type="submit" onclick="alert('Спасибо за покупку!')" class="btn btn-info">Купить</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

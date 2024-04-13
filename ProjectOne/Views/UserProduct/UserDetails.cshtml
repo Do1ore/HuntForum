@@ -1,0 +1,35 @@
+﻿@model ProjectFuse.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Детали</h1>
+<div class="card mb-3" style="max-width: 100%;">
+    <div class="row g-0">
+        <div class="col-md-4 p-3">
+            <img src="@Model.ImagePath" class="img-fluid rounded-1 h-100 object-fit-contain" alt="@Model.Name">
+
+        </div>
+        <div class="col-md-8">
+            <div class="card-body" style="padding: 40px">
+                <h1 class="card-title text-light" style="padding-block-end: 20px">@Model.Name</h1>
+                <p class="card-text">@Model.Description</p>
+                <div class="d-flex">
+                    <span class="fw-bold display-4 me-2" style="text-align: left">$@Model.Price.ToString()</span>
+                    <button form="toCartForm" type="submit" class="btn btn-primary me-2">В корзину</button>
+                     <button type="submit" onclick="alert('Спасибо за покупку!')" class="btn btn-info">Купить</button>
+                </div>
+
+                <form id="toCartForm" class="" method="post" asp-controller="UserProduct" asp-action="AddToCart">
+                    <input type="hidden" name="id" value="@Model.Id.ToString()">
+                </form>
+               
+            </div>
+        </div>
+
+    </div>
+</div>
+<div>
+    <a asp-controller="UserProduct" asp-action="Index">Товары</a>
+</div>
