@@ -1,0 +1,34 @@
+@model ProjectFuse.Models.Forum.TopicView?
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+
+<div class="col-md-8 mb-3">
+    <h2>@Model?.Title</h2>
+    <span>@Model?.Content</span><br/>
+    @if (Model?.AuthorName is not null)
+    {
+    <span>Автор: @Model.AuthorName</span>
+    }<br/>
+    <small>Создано @Model?.CreatedAt.ToLocalTime().ToString("d/M/yyyy")</small>
+    
+    
+    @if (Model?.Messages is null || Model?.Messages?.Count <= 0)
+    {
+        <span>У темы нет комментариев, начните обуждение!</span>
+    }
+
+
+    @if (Model?.Messages != null)
+    {
+        foreach (var item in Model?.Messages!)
+        {
+            <h5>@item.UserId</h5>
+            
+        }
+    }
+</div>
+<h2>title</h2>

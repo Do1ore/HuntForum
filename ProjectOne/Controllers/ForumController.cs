@@ -2,7 +2,6 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using NuGet.Protocol;
 using ProjectFuse.Areas.Identity.Data;
 using ProjectFuse.Models;
 using ProjectFuse.Models.Forum;
@@ -32,13 +31,15 @@ public class ForumController : Controller
                 Title = topic.Title,
                 Content = topic.Content,
                 CreatedAt = topic.CreatedAt,
-                ForumMessagesCount = (long)_context.ForumMessages?.Where(m => m.TopicId == topic.TopicId).ToList().Count!,
+                ForumMessagesCount =
+                    (long)_context.ForumMessages?.Where(m => m.TopicId == topic.TopicId).ToList().Count!,
                 AuthorName = _userManager.Users
-                    .Where(u=> u.Id == topic.UserId)
-                    .Select(u=> u.UserName)
+                    .Where(u => u.Id == topic.UserId)
+                    .Select(u => u.UserName)
                     .FirstOrDefault()
             });
         }
+
         return View(topicViewList);
     }
 
@@ -94,8 +95,22 @@ public class ForumController : Controller
         return RedirectToAction("TopicDetails", new { id = message?.TopicId });
     }
 
-    public IActionResult TopicDetails(int? id)
+    [HttpGet]
+    public async Task<IActionResult> TopicDetails(int? id)
     {
-        throw new NotImplementedException();
+        var topic = await _context.Topics.FirstOrDefaultAsync(i => i.TopicId == id);
+        var topicViewModel = new TopicView
+        {
+            Title = topic?.Title,
+            Content = topic?.Content,
+            CreatedAt = topic!.CreatedAt,
+            ForumMessagesCount = (long)_context.ForumMessages?.Where(m => m.TopicId == topic.TopicId).ToList().Count!,
+            AuthorName = _userManager.Users
+                .Where(u => u.Id == topic.UserId)
+                .Select(u => u.UserName)
+                .FirstOrDefault(),
+            Messages = await _context.ForumMessages.Where(i => i.TopicId == id).ToListAsync()
+        };
+        return View(topicViewModel);
     }
 }
