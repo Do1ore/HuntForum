@@ -28,21 +28,21 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" asp-area="" asp-controller="UserProduct" asp-action="Index">Продукты для пользователя</a>
-                </li>
+                </li> 
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-page="/Product/Index">Продукты</a>
-                </li>
+                    <a class="nav-link" asp-area="" asp-page="/Product/Index">Продукты</a> 
+                </li> 
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="UserProduct" asp-action="Cart">
-                        <i class="fas fa-shopping-cart"></i> Корзина
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Role" asp-action="Index">Роли</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-page="/User/Index">Пользователи</a>
-                </li>
+                    <a class="nav-link" asp-area="" asp-controller="UserProduct" asp-action="Cart"> 
+                        <i class="fas fa-shopping-cart"></i> Корзина 
+                    </a> 
+                </li> 
+                <li class="nav-item"> 
+                    <a class="nav-link" asp-area="" asp-controller="Role" asp-action="Index">Роли</a> 
+                </li> 
+                <li class="nav-item"> 
+                    <a class="nav-link" asp-area="" asp-page="/User/Index">Пользователи</a> 
+                </li> 
                 <partial name="_LoginPartial.cshtml"/>
             </ul>
         </div>
@@ -82,7 +82,7 @@
                 <partial name="_LoginPartial.cshtml"/>
             </div>
         </nav>
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pt-5 bg-primary">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pt-5">
             @RenderBody()
         </main>
     </div>

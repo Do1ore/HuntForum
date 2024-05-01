@@ -28,6 +28,7 @@ public class ForumController : Controller
         {
             topicViewList.Add(new TopicView
             {
+                Id = topic.TopicId,
                 Title = topic.Title,
                 Content = topic.Content,
                 CreatedAt = topic.CreatedAt,
@@ -68,6 +69,11 @@ public class ForumController : Controller
     [HttpPost]
     public async Task<IActionResult> CreateMessage(int topicId, string message)
     {
+        if (message == string.Empty)
+        {
+            return RedirectToAction("TopicDetails", new { id = topicId });
+        }
+
         var forumMessage = new ForumMessage
         {
             TopicId = topicId,
@@ -101,6 +107,7 @@ public class ForumController : Controller
         var topic = await _context.Topics.FirstOrDefaultAsync(i => i.TopicId == id);
         var topicViewModel = new TopicView
         {
+            Id = topic?.TopicId,
             Title = topic?.Title,
             Content = topic?.Content,
             CreatedAt = topic!.CreatedAt,
@@ -109,8 +116,31 @@ public class ForumController : Controller
                 .Where(u => u.Id == topic.UserId)
                 .Select(u => u.UserName)
                 .FirstOrDefault(),
-            Messages = await _context.ForumMessages.Where(i => i.TopicId == id).ToListAsync()
         };
+        var messages = await _context.ForumMessages.Where(i => i.TopicId == id).ToListAsync();
+
+        messages.ForEach(message =>
+        {
+            var user = _userManager.Users.FirstOrDefault(i => i.Id == message.UserId);
+            topicViewModel.Messages?.Add(new ForumMessageView
+            {
+                TopicId = message.TopicId,
+                UpdatedAt = message.UpdatedAt,
+                PostedAt = message.PostedAt,
+                Message = message.Message,
+                LikeCount = message.LikeCount,
+                ForumMessageId = message.ForumMessageId,
+                User = new UserView
+                {
+                    Id = user?.Id,
+                    Name = user?.UserName,
+                    //     Surname = user.Surname,
+                    //     LastName = user.LastName,
+                    //     Age = user.Age
+                }
+            });
+        });
+
         return View(topicViewModel);
     }
 }

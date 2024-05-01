@@ -1,176 +1,105 @@
-// Slate 5.3.2
+// Lux 5.3.3
 // Bootswatch
 
 
 // Variables
 
-// Mixins
-
-@mixin btn-shadow($color){
-  @include gradient-y-three-colors(tint-color($color, 12%), $color, 60%, shade-color($color, 8%));
-  filter: none;
-}
-
-@mixin btn-shadow-inverse($color){
-  @include gradient-y-three-colors(shade-color($color, 16%), shade-color($color, 10%), 40%, shade-color($color, 6%));
-  filter: none;
-}
-
-@mixin btn-shadow-inverse-dark($color){
-  @include gradient-y-three-colors(shade-color($color, 36%), shade-color($color, 30%), 40%, shade-color($color, 26%));
-  filter: none;
+$web-font-path: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700&display=swap" !default;
+@if $web-font-path {
+  @import url("#{$web-font-path}");
 }
 
 // Navbar
 
 .navbar {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-  border: 1px solid rgba(0, 0, 0, .6);
+  font-size: $font-size-sm;
+  font-weight: 600;
+  text-transform: uppercase;
 
-  .container {
-    padding: 0;
-  }
-
-  .navbar-toggler {
-    border-color: rgba(0, 0, 0, .6);
-  }
-
-  &-fixed-top {
-    border-width: 0 0 1px;
-  }
-
-  &-fixed-bottom {
-    border-width: 1px 0 0;
-  }
-
-  .nav-link {
-    padding: 1rem;
-    border-right: 1px solid rgba(0, 0, 0, .2);
-    border-left: 1px solid rgba(255, 255, 255, .1);
+  &-nav {
+    .nav-link {
+      padding-top: .715rem;
+      padding-bottom: .715rem;
+    }
   }
 
   &-brand {
-    padding: .75rem 1rem subtract(24px, .75rem);
-    margin-right: 0;
-    border-right: 1px solid rgba(0, 0, 0, .2);
-  }
-
-  .nav-item.active .nav-link {
-    background-color: rgba(0, 0, 0, .3);
-    border-left: 1px solid rgba(0, 0, 0, .2);
-  }
-
-  &-nav .nav-item + .nav-item {
-    margin-left: 0;
-  }
-
-  @each $color, $value in $theme-colors {
-    &.bg-#{$color} {
-
-      .nav-link {
-        &:hover {
-          @include btn-shadow-inverse($value);
-          border-left: 1px solid rgba(0, 0, 0, .2);
-        }
-
-        &:active,
-        &.active {
-          @include btn-shadow-inverse-dark($value);
-          border-left: 1px solid rgba(0, 0, 0, .2);
-        }
-      }
-    }
+    margin-right: 2rem;
   }
 }
 
-@media (max-width: 576px) {
-  .navbar-expand-sm {
-    .navbar-brand,
-    .nav-link {
-      border: none !important;
-    }
+.bg-light {
+  border: 1px solid rgba(0, 0, 0, .1);
+
+  &.navbar-fixed-top {
+    border-width: 0 0 1px;
+  }
+
+  &.navbar-bottom-top {
+    border-width: 1px 0 0;
   }
 }
 
-@media (max-width: 768px) {
-  .navbar-expand-md {
-    .navbar-brand,
-    .nav-link {
-      border: none !important;
-    }
-  }
-}
-
-@media (max-width: 992px) {
-  .navbar-expand-lg {
-    .navbar-brand,
-    .nav-link {
-      border: none !important;
-    }
-  }
+.nav-item {
+  margin-right: 2rem;
 }
 
 // Buttons
 
 .btn {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-  border-color: rgba(0, 0, 0, .6);
+  font-size: $font-size-sm;
+  text-transform: uppercase;
 
-  &:not([disabled]):not(.disabled).active,
-  &.disabled {
-    border-color: rgba(0, 0, 0, .6);
-    box-shadow: none;
+  &-sm {
+    font-size: 10px;
   }
 
-  &:hover,
-  &:focus,
-  &:not([disabled]):not(.disabled):active,
-  &:not([disabled]):not(.disabled):active:hover,
-  &:not([disabled]):not(.disabled).active:hover {
-    border-color: rgba(0, 0, 0, .6);
-  }
-
-  @each $color, $value in $theme-colors {
-    &-#{$color} {
-      @include btn-shadow($value);
-
-      &:not([disabled]):not(.disabled):hover {
-        @include btn-shadow-inverse($value);
-      }
-
-      &:not([disabled]):not(.disabled):active:hover,
-      &:not([disabled]):not(.disabled).active:hover {
-        @include btn-shadow-inverse-dark($value);
-      }
+  &-warning {
+    &,
+    &:hover,
+    &:not([disabled]):not(.disabled):active,
+    &:focus {
+      color: $white;
     }
   }
 }
 
-.btn-outline {
-  &-primary {
+.btn-outline-secondary {
+  color: $gray-600;
+  border-color: $gray-600;
+
+  &:not([disabled]):not(.disabled):hover,
+  &:not([disabled]):not(.disabled):focus,
+  &:not([disabled]):not(.disabled):active {
     color: $white;
+    background-color: $gray-400;
+    border-color: $gray-400;
+  }
+
+  &:not([disabled]):not(.disabled):focus {
+    box-shadow: 0 0 0 .2rem rgba($gray-400, .5);
   }
 }
 
-.btn-link,
-.btn-link:hover {
-  border-color: transparent;
+[class*="btn-outline-"] {
+  border-width: 2px;
 }
 
-.btn-group,
-.btn-group-vertical {
-  .btn.active {
-    border-color: rgba(0, 0, 0, .6);
+.border-secondary {
+  border: 1px solid $gray-400 !important;
+}
+
+@include color-mode(dark) {
+  .btn-primary {
+    background-color: #080808;
   }
-}
-
-.btn-check:checked + .btn,
-.btn-check + .btn:hover {
-  color: $white;
-  border-color: rgba(0, 0, 0, .6);
 }
 
 // Typography
+
+body {
+  letter-spacing: 1px;
+}
 
 h1,
 h2,
@@ -178,155 +107,120 @@ h3,
 h4,
 h5,
 h6 {
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.text-secondary {
+  color: $body-color !important;
+}
+
+// Tables
+
+th {
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+}
+
+.table {
+  th,
+  td {
+    padding: 1.5rem;
+  }
+
+  &-sm {
+    th,
+    td {
+      padding: .75rem;
+    }
+  }
 }
 
 // Forms
 
-legend {
-  color: $white;
-}
+@include color-mode(dark) {
+  .form-control {
+    color: $body-color;
 
-.input-group-addon {
-  @include btn-shadow($secondary);
-  color: $white;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    &::placeholder {
+      color: $body-secondary-color;
+    }
+  }
+
+  .form-floating {
+    > label,
+    > .form-control:focus ~ label,
+    > .form-control:not(:placeholder-shown) ~ label,
+    > .form-control-plaintext ~ label,
+    > .form-select ~ label {
+      color: $body-secondary-color;
+    }
+
+    > .form-control::placeholder,
+    > .form-control-plaintext::placeholder {
+      color: transparent;
+    }
+  }
+
+  .form-check-input:checked {
+    background-color: $body-secondary-color;
+  }
+
+  .form-switch .form-check-input {
+    background-image: $form-switch-bg-image;
+  }
+
+  .form-range::-webkit-slider-thumb {
+    background-color: $gray-600;
+  }
+
+  .form-range:disabled::-webkit-slider-thumb {
+    background-color: $gray-800;
+  }
+
+  .input-group-text {
+    color: $body-secondary-color;
+  }
 }
 
 // Navs
 
-.nav-tabs {
-  .nav-link {
-    @include btn-shadow-inverse($gray-800);
-    border: 1px solid rgba(0, 0, 0, .6);
-
-    &:not([disabled]):not(.disabled):hover,
-    &:not([disabled]):not(.disabled):focus,
-    &:not([disabled]):not(.disabled):active,
-    &:not([disabled]):not(.disabled).active {
-      @include btn-shadow($gray-800);
-    }
-
-    &.disabled {
-      border: 1px solid rgba(0, 0, 0, .6);
-    }
-  }
-
-  .nav-link,
-  .nav-link:hover {
-    color: $white;
-  }
-}
-
-.nav-pills {
-  .nav-link {
-    @include btn-shadow($gray-800);
-    color: $white;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-    border: 1px solid rgba(0, 0, 0, .6);
-
-    &:hover {
-      @include btn-shadow-inverse($gray-800);
-      border: 1px solid rgba(0, 0, 0, .6);
-    }
-  }
-
-  .nav-link.active,
-  .nav-link:hover {
-    background-color: transparent;
-    @include btn-shadow-inverse($gray-800);
-    border: 1px solid rgba(0, 0, 0, .6);
-  }
-
-  .nav-link.disabled,
-  .nav-link.disabled:hover {
-    @include btn-shadow($gray-800);
-    color: $nav-link-disabled-color;
-  }
-}
-
-.pagination {
-  .page-link {
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-    @include btn-shadow($gray-800);
-
-    &:hover {
-      @include btn-shadow-inverse($gray-800);
-      text-decoration: none;
-    }
-  }
-
-  .page-item.active .page-link {
-    @include btn-shadow-inverse($gray-800);
-  }
-
-  .page-item.disabled .page-link {
-    @include btn-shadow($gray-800);
-  }
-}
-
-.breadcrumb {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-  background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, .6);
-  @include btn-shadow($gray-800);
-
-  a,
-  a:hover {
-    color: $white;
-  }
+.dropdown-menu {
+  font-size: $font-size-sm;
+  text-transform: none;
 }
 
 // Indicators
 
-.alert {
-  color: $white;
-  border: none;
-
-  a,
-  .alert-link {
-    color: $white;
-    text-decoration: underline;
-  }
-
-  @each $color, $value in $theme-colors {
-    &-#{$color} {
-      background-color: $value;
-    }
-  }
-
-  &-light {
-    &,
-    a:not(.btn),
-    .alert-link {
-      color: $dark;
-    }
-  }
-}
-
 .badge {
+  padding-top: .28rem;
+
+  &-pill {
+    border-radius: 10rem;
+  }
+
+  &.bg-secondary,
   &.bg-light {
     color: $dark;
   }
 }
 
-.tooltip {
-  --bs-tooltip-bg: var(--bs-tertiary-bg);
-  --bs-tooltip-color: var(--bs-emphasis-color);
-}
-
 // Containers
 
-.list-group {
-  &-item {
-    color: $white;
-
-    &-light {
-      color: $dark;
-    }
-  }
-
-  &-item-action:hover {
-    background-color: shade-color($gray-900, 10%);
+.list-group-item,
+.card {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: inherit;
   }
 }

@@ -1,46 +1,26 @@
 @model List<ProjectFuse.Models.Forum.TopicView>
 
-
+<img class="img-fluid mb-3" src="https://photocentra.ru/images/main47/477638_main.jpg"/>
 <h1>Темы форума</h1>
+<span>Найдено: @Model.Count </span>
 <a asp-action="CreateTopic" class="btn btn-primary">Создать свою тему</a>
 <div class="container mt-4">
     <div class="row">
         @foreach (var item in @Model)
         {
-            <div class="col-md-8 mb-3">
-                <h2>@item.Title</h2>
+            <div class="col-md-8 mb-3 shadow shadow-sm border border-1 border-light rounded-2 p-2">
+                <a asp-action="TopicDetails" asp-route-id="@item.Id"><h2>@item.Title</h2></a>
                 <span>@item.Content</span><br/>
                 @if (item.AuthorName is not null)
                 {
-                    <span>Автор: @item.AuthorName</span>
+                    <small>Автор: @item.AuthorName</small>
                 }<br/>
-                <small>Создано @item.CreatedAt.ToLocalTime().ToString("d/M/yyyy")</small>
+                <small>Создано: @item.CreatedAt.ToLocalTime().ToString("d/M/yyyy")</small>
+            </div>
+            <div class="col-md-4">
+                <a asp-action="TopicDetails" asp-route-id="@item.Id" class="btn btn-info">Начать обсуждение</a>
             </div>
         }
-        <div class="col-md-4">
-            <div class="p-3 mb-3 bg-light rounded">
-                <h4>Новости форума</h4>
-                <div class="p-3 bg-light rounded">
-                    <ul>
-                        <li>
-                            <h2>Пули 30 кал. матч и охота, модифицированный Корбин</h2>
-                            <p>Охотничий вариант имеет двойной сердечник, со стороны кормы более жесткий и мягкий в оживальной части. Dr. Watson 16-05-2019 16:13.</p>
-                            <a href="https://forum.guns.ru/forum_light_message/430/2456607.html">Читать далее</a>
-                        </li>
-                        <li>
-                            <h2>В Удмуртии прошел Охотничий биатлон 2021</h2>
-                            <p>14 марта на базе стрелкового комплекса «Солнечный» Якшур-Бодьинского района прошли самые яркие и масштабные соревнования.</p>
-                            <a href="https://minpriroda-udm.ru/novosti.html">Читать далее</a>
-                        </li>
-                        <li>
-                            <h2>Техника передвижения на ходовых охотах</h2>
-                            <p>На охоте для передвижения могут применяться: ходьба, бег, перебежки, переползание, скрадывание. Последний способ передвижения наиболее часто используется охотниками.</p>
-                            <a href="https://www.ohotniki.ru/hunting/article/2013/10/21/172739-tehnika-peredvizheniya-na-hodovyih-ohotah.html">Читать далее</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
+  
     </div>
 </div>

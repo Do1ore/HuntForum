@@ -1,34 +1,81 @@
-@model ProjectFuse.Models.Forum.TopicView?
+@model ProjectFuse.Models.Forum.TopicView
 
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
+<img class="img-fluid w-100 mb-3" style="max-height: 25dvh; object-fit: cover" src="http://vsegda-pomnim.com/uploads/posts/2022-04/1648963655_10-vsegda-pomnim-com-p-panorama-les-v-visokom-kachestve-foto-21.jpg" alt="Лес"/>
 
+<h2>Детальная информация темы</h2>
 
-<div class="col-md-8 mb-3">
-    <h2>@Model?.Title</h2>
-    <span>@Model?.Content</span><br/>
-    @if (Model?.AuthorName is not null)
-    {
-    <span>Автор: @Model.AuthorName</span>
-    }<br/>
-    <small>Создано @Model?.CreatedAt.ToLocalTime().ToString("d/M/yyyy")</small>
-    
-    
-    @if (Model?.Messages is null || Model?.Messages?.Count <= 0)
-    {
-        <span>У темы нет комментариев, начните обуждение!</span>
-    }
-
-
-    @if (Model?.Messages != null)
-    {
-        foreach (var item in Model?.Messages!)
+<div class="card text-white bg-primary mb-3">
+    <div class="card-header">Тема от @Model.AuthorName</div>
+    <div class="card-body">
+        <h4 class="card-title">@Model.Title</h4>
+        <p class="card-text">@Model.Content</p>
+    </div>
+    <div class="card-footer text-white">
+        <small>Создано: @Model.CreatedAt.ToLocalTime().ToString("d/M/yyyy")</small>
+        <br/>
+        @if (Model.AuthorName is not null)
         {
-            <h5>@item.UserId</h5>
-            
+            <small>Автор: @Model.AuthorName</small>
         }
-    }
+    </div>
 </div>
-<h2>title</h2>
+
+<form asp-controller="Forum" asp-action="CreateMessage" asp-route-topicId="@Model.Id" method="post">
+    <div class="input-group mb-3">
+        <input type="text" name="message" class="form-control" placeholder="Обсуждать здесь.." aria-label="Обсуждать здесь.." aria-describedby="button-addon2"> <button class="btn btn-primary" type="submit" id="button-addon2">Отправить</button>
+    </div>
+</form>
+<h2>Обуждения:</h2>
+@if (Model.Messages?.Count <= 0 || Model.Messages is null)
+{
+    <span>Еще никто не обсуждал эту тему. Станьте первым!</span>
+}
+
+@if (Model.Messages != null)
+{
+    foreach (var message in Model.Messages)
+    {
+        <div class="row">
+
+            <div class="col-2">
+                <p>Создано: @message.PostedAt.ToString("dd.MM.yyyy")</p>
+            </div>
+            <div class="col-6">
+                <div class="card bg-secondary mb-3">
+                    @if (message.User?.Name is null)
+                    {
+                        <div class="card-header">Сообщение от <b>Инкогнито</b></div>
+                    }
+                    else
+                    {
+                        <div class="card-header">Сообщение от <b>@message.User.Name</b></div>
+                    }
+                    <div class="card-body">
+                        <p class="card-text">@message.Message</p>
+                    </div>
+
+                    <div class="card-footer">
+                        @if (message?.User?.Age != 0)
+                        {
+                            @message?.User?.Age
+                            <br/>
+                        }
+                        <form asp-controller="Forum" asp-action="LikeMessage" asp-route-messageId="@message?.ForumMessageId">
+
+                            <button type="submit" class="border-0 border icon-link-hover">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill me-1" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                                </svg>
+                            </button>
+                            <span>@message?.LikeCount</span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
