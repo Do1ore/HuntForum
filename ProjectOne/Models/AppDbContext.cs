@@ -8,6 +8,7 @@ namespace ProjectFuse.Models
         public DbSet<Product> Products { get; set; }
         public DbSet<ForumMessage> ForumMessages { get; set; }
         public DbSet<Topic> Topics { get; set; }
+        public DbSet<NewsApiSettingsModel> NewsApiSettings { get; set; }
         
         public AppDbContext(DbContextOptions options) : base(options)
         {

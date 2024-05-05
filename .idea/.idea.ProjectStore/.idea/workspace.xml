@@ -13,20 +13,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="278e1c24-f9e4-44c7-9d0b-f972fe234b2a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ProjectOne/Models/Forum/ForumMessageView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/Models/Forum/UserView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/Controllers/NewsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/Mapper/NewsMappers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/Models/NewsSettingsApiModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/Services/NewsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/ViewModels/News/Article.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/ViewModels/News/NewsSettingsViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/ViewModels/News/NewsViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/ViewModels/News/Sourse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/Views/Home/AllNews.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/Views/Home/NewsDetails.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectOne/Views/News/ManageNewsSettings.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources/1141f214-f082-47fa-9d9c-1fc37dad8291.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources/1141f214-f082-47fa-9d9c-1fc37dad8291.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Controllers/ForumController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Controllers/ForumController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Models/Forum/Topic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Models/Forum/Topic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Models/Forum/TopicView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Models/Forum/TopicView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Forum/CreateTopic.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Forum/CreateTopic.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Forum/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Forum/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Forum/TopicDetails.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Forum/TopicDetails.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Models/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Models/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Pages/Product/Edit.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Pages/Product/Edit.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/ProjectFuse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/ProjectFuse.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/wwwroot/lib/bootstrap/dist/css/_bootswatch.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/wwwroot/lib/bootstrap/dist/css/_bootswatch.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/wwwroot/lib/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/UserProduct/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/UserProduct/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/UserProduct/UserDetails.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/UserProduct/UserDetails.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,10 +86,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "IdeDpaSqlPageId",
+    "settings.editor.selected.configurable": "preferences.general",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
       "Razor"
     ],
@@ -176,7 +189,9 @@
       <workItem from="1714041777978" duration="1290000" />
       <workItem from="1714568174517" duration="56000" />
       <workItem from="1714570137639" duration="5977000" />
-      <workItem from="1714582775020" duration="4777000" />
+      <workItem from="1714582775020" duration="4918000" />
+      <workItem from="1714639432170" duration="668000" />
+      <workItem from="1714920576111" duration="3942000" />
     </task>
     <task id="LOCAL-00001" summary="Forum topic creation.">
       <option name="closed" value="true" />
@@ -186,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713046238048</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="forum message">
+      <option name="closed" value="true" />
+      <created>1714587706753</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714587706753</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +219,26 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Forum topic creation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Forum topic creation." />
+    <MESSAGE value="forum message" />
+    <option name="LAST_COMMIT_MESSAGE" value="forum message" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ProjectOne/Pages/Product/Edit.cshtml.cs</url>
+          <line>65</line>
+          <properties documentPath="C:\Users\user\RiderProjects\CourseProjects\Zapal\ProjectOne\Pages\Product\Edit.cshtml.cs" initialLine="65" containingFunctionPresentation="Method 'OnPostAsync'">
+            <startOffsets>
+              <option value="1940" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2078" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

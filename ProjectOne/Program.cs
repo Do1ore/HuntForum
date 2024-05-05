@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ProjectFuse.Areas.Identity.Data;
 using ProjectFuse.Models;
+using ProjectFuse.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AppConnectionString") ??
@@ -11,6 +12,7 @@ var connectionString = builder.Configuration.GetConnectionString("AppConnectionS
 builder.Services.AddDbContext<AppIdentityDbContext>(options => options.UseNpgsql(connectionString));
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
+builder.Services.AddScoped<NewsManagerService>();
 
 builder.Services.AddIdentity<ProjectOneUser, IdentityRole>(options =>
     {

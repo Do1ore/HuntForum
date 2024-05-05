@@ -77,15 +77,15 @@
 
                                 <form method="post" class="me-2" asp-controller="UserProduct" asp-action="UserDetails">
                                     <input type="hidden" name="id" value="@item.Id.ToString()">
-                                    <button type="submit" class="btn btn-primary">Детали</button>
+                                    <button type="submit" class="btn btn-sm btn-primary">Детали</button>
                                 </form>
 
                                 <form method="post" class="me-2" asp-controller="UserProduct" asp-action="AddToCart">
                                     <input type="hidden" name="id" value="@item.Id.ToString()">
-                                    <button type="submit" class="btn btn-secondary">В корзину</button>
+                                    <button type="submit" class="btn btn-sm btn-secondary">В корзину</button>
                                 </form>
 
-                                <button type="submit" onclick="alert('Спасибо за покупку!')" class="btn btn-info">Купить</button>
+                                <button type="submit" onclick="alert('Спасибо за покупку!')" class="btn  btn-sm btn-info">Купить</button>
                             </div>
 
                         </div>

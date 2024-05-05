@@ -50,12 +50,20 @@ namespace ProjectFuse.Pages.Product
 
             if (Input.Product.ItemImage?.Length > 0)
             {
-                if (Input.Product.ImagePath != null && System.IO.File.Exists(Input.Product.ImagePath))
+                try
                 {
-                    System.IO.File.Delete(Input.Product.ImagePath);
+                    if (Input.Product.ImagePath != null && System.IO.File.Exists(Input.Product.ImagePath))
+                    {
+                        System.IO.File.Delete(Input.Product.ImagePath);
+                    }
+                }
+                catch (Exception e)
+                {
+                    // ignored
                 }
 
-                var fileName = ("ProductImage" + DateTime.Now.ToShortDateString() + Input!.Product.ItemImage!.FileName)
+
+                var fileName = ("ProductImage" + DateTime.UtcNow.ToString("dd_MM_yyyy") + Input!.Product.ItemImage!.FileName)
                     .Trim();
                 var relativePath = $@"\img\products\{fileName}";
                 var fullPath = _webHostEnvironment.WebRootPath + relativePath;
