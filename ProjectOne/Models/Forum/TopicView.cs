@@ -8,6 +8,8 @@ public class TopicView
     public DateTime CreatedAt { get; set; }
 
     public string? AuthorName { get; set; }
+    public string? AuthorLastName { get; set; }
+    public bool HasWeaponLicence { get; set; }
     public long ForumMessagesCount { get; set; }
 
     public ICollection<ForumMessageView>? Messages { get; set; } = new List<ForumMessageView>();

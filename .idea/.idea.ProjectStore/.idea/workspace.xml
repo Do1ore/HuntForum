@@ -13,30 +13,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="278e1c24-f9e4-44c7-9d0b-f972fe234b2a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ProjectOne/Controllers/NewsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/Mapper/NewsMappers.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/Models/NewsSettingsApiModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/Services/NewsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/ViewModels/News/Article.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/ViewModels/News/NewsSettingsViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/ViewModels/News/NewsViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/ViewModels/News/Sourse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/Views/Home/AllNews.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/Views/Home/NewsDetails.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectOne/Views/News/ManageNewsSettings.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources/1141f214-f082-47fa-9d9c-1fc37dad8291.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources/1141f214-f082-47fa-9d9c-1fc37dad8291.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources/1141f214-f082-47fa-9d9c-1fc37dad8291.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Models/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Models/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Pages/Product/Edit.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Pages/Product/Edit.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Data/AppIdentityDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Data/AppIdentityDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Data/ProjectOneUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Data/ProjectOneUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/ManageNavPages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/ManageNavPages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Controllers/ForumController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Controllers/ForumController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Controllers/NewsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Controllers/NewsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Models/Forum/TopicView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Models/Forum/TopicView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Models/Forum/UserView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Models/Forum/UserView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectOne/ProjectFuse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/ProjectFuse.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/UserProduct/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/UserProduct/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/UserProduct/UserDetails.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/UserProduct/UserDetails.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Forum/TopicDetails.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Forum/TopicDetails.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +37,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Identity/UI/src/Areas/Identity/Pages/V4/Account/Manage/Index.cshtml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8486d31e24f30e3fa1809a95699a0adc16f448d7/src/Identity/Extensions.Stores/src/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Identity/Extensions.Stores/src/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/5c6be2458d7d7d2ec22d1555bf829ed19adacb2a/src/EFCore.Relational/Metadata/Internal/View.cs" root0="SKIP_HIGHLIGHTING" />
@@ -59,7 +50,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -75,7 +66,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.ProjectFuse: http.executor": "Debug",
+    ".NET Launch Settings Profile.ProjectFuse: http.executor": "Run",
     "Notification.DisplayName-DoNotAsk-WindowsDefender": "Microsoft Defender configuration",
     "Notification.DoNotAsk-WindowsDefender": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -191,7 +182,8 @@
       <workItem from="1714570137639" duration="5977000" />
       <workItem from="1714582775020" duration="4918000" />
       <workItem from="1714639432170" duration="668000" />
-      <workItem from="1714920576111" duration="3942000" />
+      <workItem from="1714920576111" duration="4033000" />
+      <workItem from="1715530252476" duration="5989000" />
     </task>
     <task id="LOCAL-00001" summary="Forum topic creation.">
       <option name="closed" value="true" />
@@ -209,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714587706753</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="news, bug fix and other">
+      <option name="closed" value="true" />
+      <created>1714924629866</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714924629866</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +220,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Forum topic creation." />
     <MESSAGE value="forum message" />
-    <option name="LAST_COMMIT_MESSAGE" value="forum message" />
+    <MESSAGE value="news, bug fix and other" />
+    <option name="LAST_COMMIT_MESSAGE" value="news, bug fix and other" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

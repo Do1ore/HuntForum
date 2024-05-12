@@ -134,9 +134,10 @@ public class ForumController : Controller
                 {
                     Id = user?.Id,
                     Name = user?.UserName,
-                    //     Surname = user.Surname,
-                    //     LastName = user.LastName,
-                    //     Age = user.Age
+                    Surname = user?.LastName,
+                    MidlleName = user?.MiddleName,
+                    Age = user?.Age,
+                    HasWeaponLicence = user?.HasWeaponLicence
                 }
             });
         });

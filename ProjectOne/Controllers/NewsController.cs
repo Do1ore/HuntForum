@@ -29,6 +29,7 @@ namespace ProjectFuse.Controllers
             }
 
             var settingsViewModel = NewsMapper.MapToNewsSettingsViewModel(newSettings);
+
             return View(settingsViewModel);
         }
 
@@ -48,7 +49,7 @@ namespace ProjectFuse.Controllers
             {
                 newsSettings.Domains = domains;
             }
-            
+
             NewsApiSettingsModel toUpdate = new();
             if (!_dbContext.NewsApiSettings.Any())
                 await _dbContext.NewsApiSettings.AddAsync(NewsMapper.MapToNewsApiSettingsModel(newsSettings));

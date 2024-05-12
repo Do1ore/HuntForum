@@ -6,12 +6,14 @@
 }
 <img class="img-fluid w-100 mb-3" style="max-height: 25dvh; object-fit: cover" src="http://vsegda-pomnim.com/uploads/posts/2022-04/1648963655_10-vsegda-pomnim-com-p-panorama-les-v-visokom-kachestve-foto-21.jpg" alt="Лес"/>
 
-<h2>Детальная информация темы</h2>
-
+<h1>Тема от @Model.AuthorName</h1>
+<span class="lead mb-3">Детальная информация темы</span>
 <div class="card text-white bg-primary mb-3">
-    <div class="card-header">Тема от @Model.AuthorName</div>
+    <div class="card-header">
+        <span class="h3">@Model.Title</span>
+    </div>
     <div class="card-body">
-        <h4 class="card-title">@Model.Title</h4>
+        <h4 class="card-title"></h4>
         <p class="card-text">@Model.Content</p>
     </div>
     <div class="card-footer text-white">
@@ -21,6 +23,12 @@
         {
             <small>Автор: @Model.AuthorName</small>
         }
+        @if (Model.HasWeaponLicence)
+        {
+            <small>У автора поста есть разрешение на оружие</small>
+        }
+
+
     </div>
 </div>
 
@@ -30,6 +38,7 @@
     </div>
 </form>
 <h2>Обуждения:</h2>
+<hr class="mb-3"/>
 @if (Model.Messages?.Count <= 0 || Model.Messages is null)
 {
     <span>Еще никто не обсуждал эту тему. Станьте первым!</span>
@@ -41,10 +50,19 @@
     {
         <div class="row">
 
-            <div class="col-2">
+            <div class="col-3">
                 <p>Создано: @message.PostedAt.ToString("dd.MM.yyyy")</p>
+                @if (Model.HasWeaponLicence)
+                {
+                    <p>Разрешение на оружие: <b>Да</b></p>
+                }
+                else
+                {
+                    <p>Разрешение на оружие: <b>Нет</b></p>
+                }
             </div>
-            <div class="col-6">
+
+            <div class="col-9">
                 <div class="card bg-secondary mb-3">
                     @if (message.User?.Name is null)
                     {

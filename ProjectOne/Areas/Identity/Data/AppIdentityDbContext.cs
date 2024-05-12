@@ -10,6 +10,7 @@ public class AppIdentityDbContext : IdentityDbContext<ProjectOneUser>
     {
     }
 
+    public DbSet<ProjectOneUser> Users { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
