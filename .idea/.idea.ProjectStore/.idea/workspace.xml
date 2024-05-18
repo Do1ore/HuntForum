@@ -12,9 +12,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="278e1c24-f9e4-44c7-9d0b-f972fe234b2a" name="Changes" comment="some update and naming">
+    <list default="true" id="278e1c24-f9e4-44c7-9d0b-f972fe234b2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/wwwroot/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/wwwroot/img/logo.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +34,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57f31571d08244e681c5db868581f67a1c1f88/1a/58e09a7b/View.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8a9e131e7ddd42759514b74c0c1f5725188a0/33/a994e580/ClaimTypes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/user/RiderProjects/CourseProjects/Zapal/ProjectOne/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/user/RiderProjects/CourseProjects/Zapal/ProjectOne/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -66,7 +66,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;IdeDpaMemoryAllocationsPageId&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -175,7 +175,7 @@
       <workItem from="1715530252476" duration="6600000" />
       <workItem from="1715699056643" duration="791000" />
       <workItem from="1715796478405" duration="2477000" />
-      <workItem from="1716050734497" duration="1190000" />
+      <workItem from="1716050734497" duration="1748000" />
     </task>
     <task id="LOCAL-00001" summary="Forum topic creation.">
       <option name="closed" value="true" />
@@ -217,7 +217,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716050800890</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="logo update">
+      <option name="closed" value="true" />
+      <created>1716052045932</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716052045932</updated>
+    </task>
+    <task id="LOCAL-00007" summary="favicon.ico">
+      <option name="closed" value="true" />
+      <created>1716052193998</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716052193998</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +247,9 @@
     <MESSAGE value="news, bug fix and other" />
     <MESSAGE value="update" />
     <MESSAGE value="some update and naming" />
-    <option name="LAST_COMMIT_MESSAGE" value="some update and naming" />
+    <MESSAGE value="logo update" />
+    <MESSAGE value="favicon.ico" />
+    <option name="LAST_COMMIT_MESSAGE" value="favicon.ico" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
