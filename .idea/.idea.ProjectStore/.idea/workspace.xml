@@ -13,20 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="278e1c24-f9e4-44c7-9d0b-f972fe234b2a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/dataSources/1141f214-f082-47fa-9d9c-1fc37dad8291.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectStore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Data/AppIdentityDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Data/AppIdentityDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Data/ProjectOneUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Data/ProjectOneUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/ManageNavPages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/ManageNavPages.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectOne/Controllers/ForumController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Controllers/ForumController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Controllers/NewsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Controllers/NewsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Models/Forum/TopicView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Models/Forum/TopicView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectOne/Models/Forum/UserView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Models/Forum/UserView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/ProjectFuse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/ProjectFuse.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Forum/TopicDetails.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Forum/TopicDetails.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectOne/Views/News/ManageNewsSettings.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectOne/Views/News/ManageNewsSettings.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,36 +55,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.ProjectFuse: http.executor": "Run",
-    "Notification.DisplayName-DoNotAsk-WindowsDefender": "Microsoft Defender configuration",
-    "Notification.DoNotAsk-WindowsDefender": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.general",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.ProjectFuse: http.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-WindowsDefender&quot;: &quot;Microsoft Defender configuration&quot;,
+    &quot;Notification.DoNotAsk-WindowsDefender&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Razor"
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Razor&quot;
     ],
-    "rider.external.source.directories": [
-      "C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\user\\AppData\\Local\\Symbols\\src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\user\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.ProjectFuse: http">
     <configuration name="ProjectFuse: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ProjectOne/ProjectFuse.csproj" />
@@ -183,7 +174,9 @@
       <workItem from="1714582775020" duration="4918000" />
       <workItem from="1714639432170" duration="668000" />
       <workItem from="1714920576111" duration="4033000" />
-      <workItem from="1715530252476" duration="5989000" />
+      <workItem from="1715530252476" duration="6600000" />
+      <workItem from="1715699056643" duration="791000" />
+      <workItem from="1715796478405" duration="2477000" />
     </task>
     <task id="LOCAL-00001" summary="Forum topic creation.">
       <option name="closed" value="true" />
@@ -209,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714924629866</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1715537190944</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715537190944</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +222,8 @@
     <MESSAGE value="Forum topic creation." />
     <MESSAGE value="forum message" />
     <MESSAGE value="news, bug fix and other" />
-    <option name="LAST_COMMIT_MESSAGE" value="news, bug fix and other" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

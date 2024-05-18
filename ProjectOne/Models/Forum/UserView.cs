@@ -7,7 +7,7 @@ public class UserView
     public string? Surname { get; set; }
     public string? MidlleName { get; set; }
     public string? MiddleName { get; set; }
-    public bool? HasWeaponLicence { get; set; } = false;
+    public bool HasWeaponLicence { get; set; } = false;
     public int? Age { get; set; }
     
 }

@@ -105,6 +105,8 @@ public class ForumController : Controller
     public async Task<IActionResult> TopicDetails(int? id)
     {
         var topic = await _context.Topics.FirstOrDefaultAsync(i => i.TopicId == id);
+        var author = _userManager.Users
+            .FirstOrDefault(u => u.Id == topic.UserId);
         var topicViewModel = new TopicView
         {
             Id = topic?.TopicId,
@@ -112,10 +114,8 @@ public class ForumController : Controller
             Content = topic?.Content,
             CreatedAt = topic!.CreatedAt,
             ForumMessagesCount = (long)_context.ForumMessages?.Where(m => m.TopicId == topic.TopicId).ToList().Count!,
-            AuthorName = _userManager.Users
-                .Where(u => u.Id == topic.UserId)
-                .Select(u => u.UserName)
-                .FirstOrDefault(),
+            HasWeaponLicence = author?.HasWeaponLicence ?? false,
+            AuthorName = author?.UserName
         };
         var messages = await _context.ForumMessages.Where(i => i.TopicId == id).ToListAsync();
 
@@ -137,7 +137,7 @@ public class ForumController : Controller
                     Surname = user?.LastName,
                     MidlleName = user?.MiddleName,
                     Age = user?.Age,
-                    HasWeaponLicence = user?.HasWeaponLicence
+                    HasWeaponLicence = user?.HasWeaponLicence ?? false
                 }
             });
         });

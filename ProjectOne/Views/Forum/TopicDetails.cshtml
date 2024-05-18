@@ -52,7 +52,7 @@
 
             <div class="col-3">
                 <p>Создано: @message.PostedAt.ToString("dd.MM.yyyy")</p>
-                @if (Model.HasWeaponLicence)
+                @if (message?.User?.HasWeaponLicence == true)
                 {
                     <p>Разрешение на оружие: <b>Да</b></p>
                 }
