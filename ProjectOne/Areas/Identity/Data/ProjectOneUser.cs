@@ -16,7 +16,7 @@ public class ProjectOneUser : IdentityUser
     [Length(2, 255)]
     public string? MiddleName { get; set; }
     
-    public string Address { get; set; }
+    public string? Address { get; set; }
     
 }
 
