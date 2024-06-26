@@ -104,9 +104,20 @@ public class ForumController : Controller
     [HttpGet]
     public async Task<IActionResult> TopicDetails(int? id)
     {
+        var currentUser = User.FindFirstValue(ClaimTypes.NameIdentifier);
         var topic = await _context.Topics.FirstOrDefaultAsync(i => i.TopicId == id);
         var author = _userManager.Users
             .FirstOrDefault(u => u.Id == topic.UserId);
+
+        if (topic?.UserId == currentUser)
+        {
+            ViewData.Add("CanEdit", "true");
+        }
+        else
+        {
+            ViewData.Add("CanEdit", "false");
+        }
+
         var topicViewModel = new TopicView
         {
             Id = topic?.TopicId,
@@ -142,6 +153,16 @@ public class ForumController : Controller
             });
         });
 
+
         return View(topicViewModel);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> DeleteTopic(int topicId)
+    {
+        await _context.ForumMessages.Where(a => a.TopicId == topicId).ExecuteDeleteAsync();
+        await _context.Topics.Where(a => a.TopicId == topicId).ExecuteDeleteAsync();
+
+        return RedirectToAction("Index");
     }
 }

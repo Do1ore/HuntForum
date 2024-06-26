@@ -12,10 +12,10 @@
         <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Неудачные попытки входа</th>
             <th scope="col">Email</th>
+            <th scope="col">ФИО</th>
+            <th scope="col">Наличие лицензии</th>
             <th scope="col">Штамп безопасности</th>
-            <th scope="col">Действие</th>
         </tr>
         </thead>
         <tbody>
@@ -24,20 +24,10 @@
         {
             <tr>
                 <th scope="row">@user.Id</th>
-                <td> @user.AccessFailedCount.ToString()</td>
                 <td>@user.Email</td>
+                <td>@user.FirstName @user.LastName @user.MiddleName</td>
+                <td>@user.HasWeaponLicence.ToString()<td>
                 <td>@user.SecurityStamp</td>
-                <td>
-                    <div class="d-flex">
-                        <button class="btn btn-dark me-2">
-                            <i class="fas fa-edit"></i> Изменить
-                        </button>
-                        <button class="btn btn-primary">
-                            <i class="fas fa-trash"></i> Удалить
-                        </button>
-                    </div>
-
-                </td>
             </tr>
         }
 

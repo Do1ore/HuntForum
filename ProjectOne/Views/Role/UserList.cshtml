@@ -8,12 +8,12 @@
         <tr>
             <td>@user.Email</td>
             <td>
-                <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-userid="@user.Id">Access level</a>
+                <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-userid="@user.Id">Уровень доступа</a>
             </td>
             <td>
                 <form method="post" asp-action="Delete">
                     <input type="hidden" name="id" value="@user.Id">
-                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
                 </form>
             </td>
         </tr>

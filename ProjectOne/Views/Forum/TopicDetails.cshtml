@@ -6,8 +6,25 @@
 }
 <img class="img-fluid w-100 mb-3" style="max-height: 25dvh; object-fit: cover" src="http://vsegda-pomnim.com/uploads/posts/2022-04/1648963655_10-vsegda-pomnim-com-p-panorama-les-v-visokom-kachestve-foto-21.jpg" alt="Лес"/>
 
-<h1>Тема от @Model.AuthorName</h1>
-<span class="lead mb-3">Детальная информация темы</span>
+<div class="row">
+    <div class="col-8">
+        <h1>Тема от @Model.AuthorName</h1>
+        <span class="lead mb-3">Детальная информация темы</span>
+    </div>
+    <div class="col-4">
+        @{
+            if (ViewData["CanEdit"] != null && ViewData["CanEdit"] as string == "true")
+            {
+                <form asp-action="DeleteTopic" method="post" asp-route-topicId="@Model.Id">
+                    <button class="btn btn-danger" type="submit">Удалить</button>
+                </form>
+            }
+        }
+    </div>
+
+
+</div>
+
 <div class="card text-white bg-primary mb-3">
     <div class="card-header">
         <span class="h3">@Model.Title</span>
@@ -27,8 +44,6 @@
         {
             <small>У автора поста есть разрешение на оружие</small>
         }
-
-
     </div>
 </div>
 
