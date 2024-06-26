@@ -45,7 +45,7 @@
                                 <mark class="mark text-light bg-dark rounded-3 p-1 ">@item.Category</mark>
                             </small>
                         </p>
-                        <p class="card-text">От @Math.Round((decimal)item.Price!, 0) $ </p>
+                        <p class="card-text">От @Math.Round((decimal)item.Price!, 0) BYN </p>
                         <div class="d-flex">
                             <form id="@item.Id" method="post" asp-controller="UserProduct" asp-action="UserDetails">
                                 <input type="hidden" name="id" value="@item.Id">

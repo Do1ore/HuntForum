@@ -16,7 +16,7 @@
                 <h1 class="card-title" style="padding-block-end: 20px">@Model.Name</h1>
                 <p class="card-text">@Model.Description</p>
                 <div class="d-flex">
-                    <span class="fw-bold display-4 me-2" style="text-align: left">$@Model.Price.ToString()</span>
+                    <span class="fw-bold display-4 me-2" style="text-align: left">@Model.Price.ToString() BYN</span>
                     <button form="toCartForm" type="submit" class="btn btn-primary me-2">В корзину</button>
                      <button type="submit" onclick="alert('Спасибо за покупку!')" class="btn btn-info">Купить</button>
                 </div>

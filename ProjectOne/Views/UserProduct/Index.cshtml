@@ -72,7 +72,7 @@
                                     <mark class="mark text-light bg-dark rounded-3 p-1 ">@item.Category</mark>
                                 </small>
                             </p>
-                            <p class="card-text">От @Math.Round((decimal)item.Price!, 0).ToString(CultureInfo.InvariantCulture) $ </p>
+                            <p class="card-text">От @Math.Round((decimal)item.Price!, 0).ToString(CultureInfo.InvariantCulture) BYN </p>
                             <div class="d-flex">
 
                                 <form method="post" class="me-2" asp-controller="UserProduct" asp-action="UserDetails">
